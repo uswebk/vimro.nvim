@@ -4,7 +4,7 @@ Learn Vim keybindings hands-on, inside Neovim.
 
 vimro shows you a start text and a goal text. Edit the buffer until it matches the goal — any sequence of keys that gets you there counts. Hints and solutions stay hidden until you ask for them.
 
-[日本語の説明はこちら](#日本語)
+[日本語版 README はこちら / Japanese README](README.ja.md)
 
 ## Features
 
@@ -123,81 +123,3 @@ See `problems/plain/001-delete-word.json` for a complete example.
 ## License
 
 [MIT](LICENSE)
-
----
-
-## 日本語
-
-vim のキーバインディングを、Neovim の中でハンズオンで学ぶプラグインです。お題テキスト（start）を目標の形（goal）に編集するとクリア。到達方法（キー操作列）は問いません。ヒントと解法は要求したときだけ表示されます。
-
-### インストール
-
-プラグインマネージャ [lazy.nvim](https://github.com/folke/lazy.nvim) を使ってインストールします。lazy.nvim がまだ無い場合は先に[公式のインストール手順](https://lazy.folke.io/installation)に従ってください（LazyVim や kickstart.nvim を使っている場合は最初から入っています）。
-
-プラグインを宣言している場所に次のスペックを追加します:
-
-- **LazyVim / kickstart.nvim などのディストリビューションを使っている場合**（`init.lua` に `require("config.lazy")` や `require("lazy").setup("plugins")` のような行がある場合）— 設定ディレクトリ（`~/.config/nvim`、Windows は `~\AppData\Local\nvim`）の `lua/plugins/` に新しいファイルを作成:
-
-  ```lua
-  -- ~/.config/nvim/lua/plugins/vimro.lua
-  return {
-    "uswebk/vimro.nvim",
-    cmd = "Vimro",
-    opts = { lang = "ja" },
-  }
-  ```
-
-- **`init.lua` に直接プラグインを列挙している場合** — `require("lazy").setup({ ... })` のテーブルの中に追加:
-
-  ```lua
-  require("lazy").setup({
-    -- ...既存のプラグイン...
-    {
-      "uswebk/vimro.nvim",
-      cmd = "Vimro",
-      opts = { lang = "ja" },
-    },
-  })
-  ```
-
-Neovim を再起動（または `:Lazy sync` を実行）するとインストールされ、`:Vimro` で起動できます。
-
-補足:
-
-- `cmd = "Vimro"` は「`:Vimro` を初めて実行したときに読み込む」遅延読み込みの指定です
-- `opts = { lang = "ja" }` で日本語 UI になります。`opts = {}` なら英語です。他のオプションは「設定」を参照
-
-### 起動方法
-
-1. `:Vimro` を実行（Neovim を開き、ノーマルモードで `:` を押してから `Vimro` と入力して Enter。挿入モード中なら先に Esc を押す）。ターミナルから `nvim +Vimro` で直接起動することもできます。`alias vimro='nvim +Vimro'` をシェル設定に足せば `vimro` 一語で起動できます
-2. 表示言語（`ja` / `en`）とカテゴリを選択
-3. 画面が左右に分割されるので、**左**の練習バッファを右ペインのお題どおりに編集
-4. goal に一致すると自動でクリア判定。右ペインで `n` を押すと次の問題へ
-
-右ペインの操作キー: `n`（次へ）/ `p`（前へ）/ `r`（リセット）/ `?`（ヒント）/ `s`（解法）/ `g`（問題一覧から選んでジャンプ）/ `q`（終了）
-
-同じ操作は**左の練習バッファからも**プレフィックス付きで実行できます（ペイン移動不要）: `<leader>n` で次へ、`<leader>r` でリセットなど。`<leader>` の実キーは環境によって異なり（LazyVim なら Space、未設定なら `\`）、右ペインの案内には実際のキー名（例:「各キーの前に Space を押してください」）が表示されます。素の `n` や `r` は vim 本来の動きのまま残しています（それを練習するためのプラグインなので）。プレフィックスは `practice_prefix` オプションで変更でき、`false` で無効化できます。
-
-### 設定
-
-```lua
-require("vimro").setup({
-  lang = "ja",          -- 表示言語 "ja" | "en"（既定 "en"）
-  fallback_lang = "en", -- 翻訳欠損時のフォールバック
-  keys = {              -- 右ペインのキーマップ（上書き可）
-    next = "n", prev = "p", reset = "r",
-    hint = "?", solution = "s", list = "g", quit = "q",
-  },
-  practice_prefix = "<leader>", -- 練習バッファで同じ操作を使うときの前置キー
-                                -- （例: <leader>n で次へ）。false で無効化
-  pane_width = 42,      -- 右ペインの幅（列数）
-})
-```
-
-### 判定と進捗
-
-判定は「各行末の空白と最終空行は無視、行内容と行数は厳密」です。進捗（解いた問題の id）は `stdpath("data")/vimro/progress.json` に保存されます。
-
-### 問題の追加
-
-`problems/<カテゴリ>/NNN-<slug>.json` に1問1ファイルで追加します。`i18n.ja` と `i18n.en` の両方を埋め、`solutions[].keys` が本当に `start` を `goal` に変形することを Neovim で確認してください。詳しくは英語セクションの Contributing problems を参照。
