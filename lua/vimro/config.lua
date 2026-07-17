@@ -15,6 +15,8 @@ M.defaults = {
   -- Prefix for the same actions in the practice buffer (e.g. <leader>n = next),
   -- so you don't have to switch panes. Set to false to disable.
   practice_prefix = "<leader>",
+  -- Width of the problem pane (columns)
+  pane_width = 42,
 }
 
 M.options = vim.deepcopy(M.defaults)

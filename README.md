@@ -100,6 +100,7 @@ require("vimro").setup({
   },
   practice_prefix = "<leader>", -- prefix for the same actions in the practice buffer
                                 -- (e.g. <leader>n = next); set to false to disable
+  pane_width = 42,      -- width of the problem pane (columns)
 })
 ```
 
@@ -184,6 +185,7 @@ require("vimro").setup({
   },
   practice_prefix = "<leader>", -- 練習バッファで同じ操作を使うときの前置キー
                                 -- （例: <leader>n で次へ）。false で無効化
+  pane_width = 42,      -- 右ペインの幅（列数）
 })
 ```
 

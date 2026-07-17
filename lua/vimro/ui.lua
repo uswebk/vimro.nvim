@@ -58,7 +58,7 @@ local function render_pane()
   table.insert(lines, string.format("%s %d/%d: %s%s",
     t("problem"), S.index, #S.problems, title, solved and (" " .. t("solved_mark")) or ""))
   table.insert(lines, string.format("%s: %d  [%s]", t("difficulty"), problem.difficulty or 0, problem.id))
-  table.insert(lines, string.rep("─", 38))
+  table.insert(lines, string.rep("─", math.max(10, config.options.pane_width - 4)))
   table.insert(lines, "")
   for _, line in ipairs(vim.split(text.description or "", "\n")) do
     table.insert(lines, line)
@@ -96,7 +96,7 @@ local function render_pane()
     table.insert(lines, "")
   end
 
-  table.insert(lines, string.rep("─", 38))
+  table.insert(lines, string.rep("─", math.max(10, config.options.pane_width - 4)))
   table.insert(lines, t("keys_help") .. ":")
   table.insert(lines, string.format("  %s: %s   %s: %s", k.next, t("key_next"), k.prev, t("key_prev")))
   table.insert(lines, string.format("  %s: %s   %s: %s", k.reset, t("key_reset"), k.hint, t("key_hint")))
@@ -268,7 +268,7 @@ local function setup_layout()
   vim.wo[S.pane_win].number = false
   vim.wo[S.pane_win].relativenumber = false
   vim.wo[S.pane_win].wrap = true
-  vim.api.nvim_win_set_width(S.pane_win, 42)
+  vim.api.nvim_win_set_width(S.pane_win, config.options.pane_width)
 
   -- Problem pane keymaps
   local k = config.options.keys
