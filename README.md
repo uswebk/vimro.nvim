@@ -11,6 +11,7 @@ vimro shows you a start text and a goal text. Edit the buffer until it matches t
 - Drill-style problems: transform `start` into `goal`, cleared automatically on match
 - Any key sequence counts — only the final buffer state is checked
 - Hints and solutions on demand (`?` / `s`), never shown by default
+- Problem pane on the left, right, or bottom (`pane_position`)
 - Japanese / English UI, per-problem translations with fallback
 - Progress saved locally
 - Problems are plain JSON files — easy to contribute
@@ -65,10 +66,10 @@ Notes:
 
 1. Run `:Vimro` (in normal mode, press `:`, type `Vimro`, then hit Enter). Or launch it straight from your terminal with `nvim +Vimro` — add `alias vimro='nvim +Vimro'` to your shell config to start drilling with a single word.
 2. Pick a UI language (`ja` / `en`) and a category (`plain` or `python`).
-3. The screen splits: edit the **left** buffer until it matches the goal described in the **right** pane.
-4. Clearing is detected automatically; press `n` in the right pane for the next problem.
+3. The screen splits into a **problem pane** and a **practice buffer**: edit the practice buffer until it matches the goal described in the problem pane. The pane sits on the left by default — put it on the right or along the bottom with `pane_position`.
+4. Clearing is detected automatically; press `n` in the problem pane for the next problem.
 
-Keys in the problem pane (right side):
+Keys in the problem pane:
 
 | Key | Action |
 |-----|--------|
