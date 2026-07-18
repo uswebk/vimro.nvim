@@ -81,7 +81,7 @@ Keys in the problem pane:
 | `g` | pick a problem from the list (jump to any problem) |
 | `q` | quit |
 
-The same actions are also available **from the buffer** with a prefix, so you don't have to switch panes: `<leader>n` for next, `<leader>r` for reset, and so on. `<leader>` depends on your config — Space in LazyVim, `\` by default — and the problem pane shows the resolved key (e.g. "Press Space before each key"). Plain `n` / `r` etc. keep their normal Vim meaning there — that's what you are here to train. The prefix is configurable via `practice_prefix` (set it to `false` to disable).
+The same actions are also available **from the buffer** with a prefix, so you don't have to switch panes: `<leader>n` for next, `<leader>r` for reset, and so on. `<leader>` depends on your config — Space in LazyVim, `\` by default — and the problem pane shows the resolved key (e.g. "Press Space before each key"). Plain `n` / `r` etc. keep their normal Vim meaning there — that's what you are here to train. The prefix is configurable via `buffer_prefix` (set it to `false` to disable).
 
 Matching ignores trailing whitespace on each line and trailing blank lines; line contents and line count are otherwise strict. How you get there — which keys, how many — is up to you.
 
@@ -104,7 +104,7 @@ require("vimro").setup({
     list = "g",
     quit = "q",
   },
-  practice_prefix = "<leader>", -- prefix for the same actions outside the problem pane
+  buffer_prefix = "<leader>",   -- prefix for the same actions outside the problem pane
                                 -- (e.g. <leader>n = next); set to false to disable
   pane_position = "left", -- where the problem pane sits: "left" | "right" | "bottom"
   pane_width = 42,      -- width of the problem pane (columns), when left or right
