@@ -66,7 +66,7 @@ Notes:
 
 1. Run `:Vimro` (in normal mode, press `:`, type `Vimro`, then hit Enter). Or launch it straight from your terminal with `nvim +Vimro` — add `alias vimro='nvim +Vimro'` to your shell config to start drilling with a single word.
 2. Pick a UI language (`ja` / `en`) and a category (`plain` or `python`).
-3. The screen splits into a **problem pane** and a **practice buffer**: edit the practice buffer until it matches the goal described in the problem pane. The pane sits on the left by default — put it on the right or along the bottom with `pane_position`.
+3. The screen splits into a **problem pane** and the buffer you edit: edit it until it matches the goal described in the problem pane. The pane sits on the left by default — put it on the right or along the bottom with `pane_position`.
 4. Clearing is detected automatically; press `n` in the problem pane for the next problem.
 
 Keys in the problem pane:
@@ -75,13 +75,13 @@ Keys in the problem pane:
 |-----|--------|
 | `n` | next problem |
 | `p` | previous problem |
-| `r` | reset the practice buffer |
+| `r` | reset the buffer |
 | `?` | toggle hints |
 | `s` | toggle solutions |
 | `g` | pick a problem from the list (jump to any problem) |
 | `q` | quit |
 
-The same actions are also available **from the practice buffer** with a prefix, so you don't have to switch panes: `<leader>n` for next, `<leader>r` for reset, and so on. `<leader>` depends on your config — Space in LazyVim, `\` by default — and the problem pane shows the resolved key (e.g. "Press Space before each key"). Plain `n` / `r` etc. keep their normal Vim meaning in the practice buffer — that's what you are here to train. The prefix is configurable via `practice_prefix` (set it to `false` to disable).
+The same actions are also available **from the buffer** with a prefix, so you don't have to switch panes: `<leader>n` for next, `<leader>r` for reset, and so on. `<leader>` depends on your config — Space in LazyVim, `\` by default — and the problem pane shows the resolved key (e.g. "Press Space before each key"). Plain `n` / `r` etc. keep their normal Vim meaning there — that's what you are here to train. The prefix is configurable via `practice_prefix` (set it to `false` to disable).
 
 Matching ignores trailing whitespace on each line and trailing blank lines; line contents and line count are otherwise strict. How you get there — which keys, how many — is up to you.
 
@@ -104,7 +104,7 @@ require("vimro").setup({
     list = "g",
     quit = "q",
   },
-  practice_prefix = "<leader>", -- prefix for the same actions in the practice buffer
+  practice_prefix = "<leader>", -- prefix for the same actions outside the problem pane
                                 -- (e.g. <leader>n = next); set to false to disable
   pane_position = "left", -- where the problem pane sits: "left" | "right" | "bottom"
   pane_width = 42,      -- width of the problem pane (columns), when left or right
