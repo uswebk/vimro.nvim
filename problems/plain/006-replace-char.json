@@ -2,28 +2,41 @@
   "id": "plain-006",
   "category": "plain",
   "difficulty": 2,
-  "start":  ["The cat sat on the mat"],
-  "goal":   ["The hat sat on the mat"],
-  "cursor": [1, 5],
-  "solutions": [
-    { "keys": "rh", "optimal": true }
+  "start": [
+    "The cat sat on the mat"
   ],
-  "tags": ["r", "replace"],
+  "goal": [
+    "The hat sat on the mat"
+  ],
+  "solutions": [
+    {
+      "keys": "wrh",
+      "optimal": true
+    }
+  ],
+  "tags": [
+    "r",
+    "replace"
+  ],
   "i18n": {
     "ja": {
       "title": "1文字置き換える",
       "description": "cat の c を h に置き換えて hat にしてください",
-      "hints": ["挿入モードに入らずに1文字だけ置き換えるコマンドがある"],
+      "hints": [
+        "挿入モードに入らずに1文字だけ置き換えるコマンドがある"
+      ],
       "notes": [
-        "r のあとに置き換えたい文字を打つ。挿入モードには入らない"
+        "w で cat の先頭へ移動し rh で 1 文字だけ置き換える"
       ]
     },
     "en": {
       "title": "Replace a character",
       "description": "Replace the 'c' in 'cat' with 'h' to make 'hat'",
-      "hints": ["There is a command that replaces one character without entering insert mode"],
+      "hints": [
+        "There is a command that replaces one character without entering insert mode"
+      ],
       "notes": [
-        "r followed by a character replaces the one under the cursor; no insert mode"
+        "w moves to 'cat', then rh replaces the single character under the cursor"
       ]
     }
   }

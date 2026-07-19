@@ -2,31 +2,47 @@
   "id": "python-007",
   "category": "python",
   "difficulty": 2,
-  "start":  ["result = compute()  # TODO: remove"],
-  "goal":   ["result = compute()"],
-  "cursor": [1, 19],
-  "solutions": [
-    { "keys": "D", "optimal": true },
-    { "keys": "d$" }
+  "start": [
+    "result = compute()  # TODO: remove"
   ],
-  "tags": ["D", "d$", "delete"],
+  "goal": [
+    "result = compute()"
+  ],
+  "solutions": [
+    {
+      "keys": "f#hhD",
+      "optimal": true
+    },
+    {
+      "keys": "f#hhd$"
+    }
+  ],
+  "tags": [
+    "D",
+    "d$",
+    "delete"
+  ],
   "i18n": {
     "ja": {
       "title": "行末のコメントを削除する",
       "description": "行末の # コメントを削除してください",
-      "hints": ["カーソル位置から行末までを一発で消せる"],
+      "hints": [
+        "コメントの手前まで移動してから、カーソル位置から行末までを一発で消す"
+      ],
       "notes": [
-        "D はカーソル位置から行末までを削除する",
-        "d$ も同じ。$ は行末への移動"
+        "f# でコメント記号へ飛び hh で手前の空白まで戻り D で行末まで削除する",
+        "D は d$ の短縮形。動きは同じ"
       ]
     },
     "en": {
       "title": "Delete a trailing comment",
       "description": "Delete the trailing '#' comment",
-      "hints": ["You can delete from the cursor to the end of the line in one go"],
+      "hints": [
+        "Move to just before the comment, then delete from the cursor to the end of the line in one go"
+      ],
       "notes": [
-        "D deletes from the cursor to the end of the line",
-        "d$ does the same; $ is the motion to end of line"
+        "f# jumps to the comment marker, hh steps back over the spaces, then D deletes to the end of the line",
+        "D is shorthand for d$ — same result"
       ]
     }
   }

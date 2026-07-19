@@ -155,11 +155,13 @@ local function load_current()
   vim.bo[S.practice_buf].modified = false
 
   if valid_win(S.practice_win) then
-    local row = math.min(problem.cursor[1], #problem.start)
-    local line = problem.start[row] or ""
-    local col = math.max(0, math.min(problem.cursor[2] - 1, math.max(0, #line - 1)))
-    vim.api.nvim_win_set_cursor(S.practice_win, { row, col })
+    -- Every problem starts at the very first character: getting to the spot you
+    -- need to edit is part of the drill, and a mid-line start reads as leftover
+    -- cursor position from the previous problem.
+    -- Enter the window first: WinEnter/BufEnter autocmds (cursor-restore plugins
+    -- and the like) would otherwise run after the cursor was placed and move it back
     vim.api.nvim_set_current_win(S.practice_win)
+    vim.api.nvim_win_set_cursor(S.practice_win, { 1, 0 })
   end
 
   render_pane()

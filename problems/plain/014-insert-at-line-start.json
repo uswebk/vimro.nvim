@@ -8,10 +8,6 @@
   "goal": [
     "The quick brown fox"
   ],
-  "cursor": [
-    1,
-    7
-  ],
   "solutions": [
     {
       "keys": "IThe <Esc>",

@@ -8,10 +8,6 @@
   "goal": [
     "Remember (a new note) today"
   ],
-  "cursor": [
-    1,
-    11
-  ],
   "solutions": [
     {
       "keys": "ci(a new note<Esc>",

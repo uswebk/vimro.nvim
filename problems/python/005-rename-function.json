@@ -2,31 +2,47 @@
   "id": "python-005",
   "category": "python",
   "difficulty": 2,
-  "start":  ["def calc(x):"],
-  "goal":   ["def compute(x):"],
-  "cursor": [1, 5],
-  "solutions": [
-    { "keys": "cwcompute<Esc>", "optimal": true },
-    { "keys": "ciwcompute<Esc>" }
+  "start": [
+    "def calc(x):"
   ],
-  "tags": ["cw", "ciw", "change"],
+  "goal": [
+    "def compute(x):"
+  ],
+  "solutions": [
+    {
+      "keys": "wcwcompute<Esc>",
+      "optimal": true
+    },
+    {
+      "keys": "wciwcompute<Esc>"
+    }
+  ],
+  "tags": [
+    "cw",
+    "ciw",
+    "change"
+  ],
   "i18n": {
     "ja": {
       "title": "関数名を変更する",
       "description": "関数名 calc を compute に変更してください",
-      "hints": ["c は変更オペレータ。削除して挿入モードに入る"],
+      "hints": [
+        "c は変更オペレータ。削除して挿入モードに入る"
+      ],
       "notes": [
-        "cw で単語を消して挿入モードへ。compute と打って <Esc>",
-        "ciw は単語の途中からでも単語全体を変更できる"
+        "w で関数名へ移動し cw で書き換える",
+        "ciw は単語のどこにいても単語全体を変更する"
       ]
     },
     "en": {
       "title": "Rename a function",
       "description": "Change the function name 'calc' to 'compute'",
-      "hints": ["c is the change operator: delete and enter insert mode"],
+      "hints": [
+        "c is the change operator: delete and enter insert mode"
+      ],
       "notes": [
-        "cw deletes the word and enters insert mode; type compute then <Esc>",
-        "ciw changes the whole word even from the middle of it"
+        "w moves to the function name, then cw changes it",
+        "ciw changes the whole word from anywhere inside it"
       ]
     }
   }

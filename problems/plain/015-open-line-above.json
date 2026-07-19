@@ -11,10 +11,6 @@
     "Second",
     "Third"
   ],
-  "cursor": [
-    1,
-    1
-  ],
   "solutions": [
     {
       "keys": "OFirst<Esc>",

@@ -8,17 +8,13 @@
   "goal": [
     "please STOP now"
   ],
-  "cursor": [
-    1,
-    8
-  ],
   "solutions": [
     {
-      "keys": "gUiw",
+      "keys": "wgUiw",
       "optimal": true
     },
     {
-      "keys": "gUe"
+      "keys": "wgUe"
     }
   ],
   "tags": [
@@ -33,7 +29,7 @@
         "gU は大文字化オペレータ。後ろにモーションやテキストオブジェクトを取る"
       ],
       "notes": [
-        "gUiw で単語まるごと大文字にする。単語のどこにいても効く",
+        "w で stop へ移動し gUiw で単語まるごと大文字にする",
         "gUe は単語末尾までを大文字にする"
       ]
     },
@@ -44,7 +40,7 @@
         "gU is the uppercase operator; it takes a motion or text object"
       ],
       "notes": [
-        "gUiw uppercases the whole word from anywhere inside it",
+        "w moves to 'stop', then gUiw uppercases the whole word",
         "gUe uppercases from the cursor to the end of the word"
       ]
     }
