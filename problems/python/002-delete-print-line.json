@@ -2,28 +2,54 @@
   "id": "python-002",
   "category": "python",
   "difficulty": 1,
-  "start":  ["def add(a, b):", "    print(a)", "    return a + b"],
-  "goal":   ["def add(a, b):", "    return a + b"],
-  "cursor": [2, 1],
-  "solutions": [
-    { "keys": "dd", "optimal": true }
+  "start": [
+    "def add(a, b):",
+    "    print(a)",
+    "    return a + b"
   ],
-  "tags": ["dd", "delete"],
+  "goal": [
+    "def add(a, b):",
+    "    return a + b"
+  ],
+  "cursor": [
+    1,
+    1
+  ],
+  "solutions": [
+    {
+      "keys": "jdd",
+      "optimal": true
+    },
+    {
+      "keys": "2Gdd"
+    }
+  ],
+  "tags": [
+    "dd",
+    "j",
+    "delete"
+  ],
   "i18n": {
     "ja": {
       "title": "デバッグ用の行を削除する",
       "description": "print(a) の行を丸ごと削除してください",
-      "hints": ["行全体を消すコマンドがある"],
+      "hints": [
+        "まず消したい行までカーソルを移動する。行全体を消すコマンドがある"
+      ],
       "notes": [
-        "dd はカーソル行を丸ごと削除する"
+        "j で print(a) の行に降りてから dd。dd はカーソル行を丸ごと削除する",
+        "2G で 2 行目に飛んでから dd"
       ]
     },
     "en": {
       "title": "Delete a debug line",
       "description": "Delete the entire 'print(a)' line",
-      "hints": ["There is a command that deletes the whole line"],
+      "hints": [
+        "First move to the line you want gone; there is a command that deletes a whole line"
+      ],
       "notes": [
-        "dd deletes the whole current line"
+        "j moves down to the print(a) line, then dd deletes the whole line",
+        "2G jumps to line 2, then dd deletes it"
       ]
     }
   }

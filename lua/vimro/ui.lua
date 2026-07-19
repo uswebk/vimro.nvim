@@ -155,9 +155,17 @@ local function load_current()
   vim.bo[S.practice_buf].modified = false
 
   if valid_win(S.practice_win) then
-    local row = math.min(problem.cursor[1], #problem.start)
-    local line = problem.start[row] or ""
-    local col = math.max(0, math.min(problem.cursor[2] - 1, math.max(0, #line - 1)))
+    -- Multi-line problems always start at the very first character: getting to the
+    -- line you need to edit is part of the drill. Single-line problems keep the
+    -- problem's own cursor, since there is no line to find.
+    local row, col
+    if #problem.start > 1 then
+      row, col = 1, 0
+    else
+      row = math.min(problem.cursor[1], #problem.start)
+      local line = problem.start[row] or ""
+      col = math.max(0, math.min(problem.cursor[2] - 1, math.max(0, #line - 1)))
+    end
     -- Enter the window first: WinEnter/BufEnter autocmds (cursor-restore plugins
     -- and the like) would otherwise run after the cursor was placed and move it back
     vim.api.nvim_set_current_win(S.practice_win)

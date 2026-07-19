@@ -2,28 +2,54 @@
   "id": "plain-004",
   "category": "plain",
   "difficulty": 1,
-  "start":  ["first line", "DELETE ME", "last line"],
-  "goal":   ["first line", "last line"],
-  "cursor": [2, 1],
-  "solutions": [
-    { "keys": "dd", "optimal": true }
+  "start": [
+    "first line",
+    "DELETE ME",
+    "last line"
   ],
-  "tags": ["dd", "delete"],
+  "goal": [
+    "first line",
+    "last line"
+  ],
+  "cursor": [
+    1,
+    1
+  ],
+  "solutions": [
+    {
+      "keys": "jdd",
+      "optimal": true
+    },
+    {
+      "keys": "2Gdd"
+    }
+  ],
+  "tags": [
+    "dd",
+    "j",
+    "delete"
+  ],
   "i18n": {
     "ja": {
       "title": "行を削除する",
       "description": "DELETE ME の行を丸ごと削除してください",
-      "hints": ["d を2回打つと？"],
+      "hints": [
+        "まず消したい行までカーソルを移動する。d を2回打つと？"
+      ],
       "notes": [
-        "dd はカーソル行を丸ごと削除する"
+        "j で 2 行目に降りてから dd。dd はカーソル行を丸ごと削除する",
+        "2G で 2 行目に飛んでから dd。行番号が分かっているときはこちら"
       ]
     },
     "en": {
       "title": "Delete a line",
       "description": "Delete the entire 'DELETE ME' line",
-      "hints": ["What happens if you press d twice?"],
+      "hints": [
+        "First move to the line you want gone. What happens if you press d twice?"
+      ],
       "notes": [
-        "dd deletes the whole current line"
+        "j moves down to line 2, then dd deletes the whole line",
+        "2G jumps straight to line 2, then dd deletes it"
       ]
     }
   }

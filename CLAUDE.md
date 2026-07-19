@@ -39,6 +39,7 @@ Five modules, each with one job. `ui.lua` is the only one that knows about the o
 - **Clear matching is deliberately loose in one axis only**: `engine.normalize` strips trailing whitespace per line and drops trailing blank lines. Line contents and line count are otherwise strict. Problems whose answer depends on trailing whitespace cannot be expressed.
 - **Keymaps in the practice buffer must stay behind `buffer_prefix`.** Binding plain `n` / `r` there would shadow the exact Vim motions being trained. The problem pane is where bare keys are safe.
 - **Categories are hardcoded in `ui.lua`** (`local categories = { "plain" }`) even though `engine.load_problems` accepts any directory name. Adding a new `problems/<category>/` requires editing that list too.
+- **`cursor` only applies to single-line problems.** `ui.load_current` starts every multi-line problem at `[1, 1]` — finding the line to edit is part of the drill — so a multi-line problem's `cursor` field is never used, and its solutions must work from the first character.
 - **`quit()` has two exit paths**: started from an empty Neovim (`is_fresh_nvim`) it runs `qa` and exits the editor; otherwise it tears down the tab/split and wipes buffers. Both must leave `S` clean, since `M.start()` guards re-entry on `S.active`.
 - Both buffers are `nofile` + `bufhidden=wipe`, and a `BufWipeout` autocmd on the practice buffer ends the session — wiping it from anywhere is a supported way to quit.
 
