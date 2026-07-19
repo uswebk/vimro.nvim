@@ -2,31 +2,47 @@
   "id": "plain-003",
   "category": "plain",
   "difficulty": 1,
-  "start":  ["Keep this part, delete the rest"],
-  "goal":   ["Keep this part,"],
-  "cursor": [1, 16],
-  "solutions": [
-    { "keys": "D", "optimal": true },
-    { "keys": "d$" }
+  "start": [
+    "Keep this part, delete the rest"
   ],
-  "tags": ["D", "d$", "delete"],
+  "goal": [
+    "Keep this part,"
+  ],
+  "solutions": [
+    {
+      "keys": "f,lD",
+      "optimal": true
+    },
+    {
+      "keys": "f,ld$"
+    }
+  ],
+  "tags": [
+    "D",
+    "d$",
+    "delete"
+  ],
   "i18n": {
     "ja": {
       "title": "行末まで削除する",
-      "description": "カーソル位置から行末までを削除して Keep this part, だけ残してください",
-      "hints": ["カーソルから行末までを一発で消すコマンドがある"],
+      "description": "delete the rest を削除して Keep this part, だけ残してください",
+      "hints": [
+        "消したい位置まで移動してから、カーソルから行末までを一発で消すコマンドを使う"
+      ],
       "notes": [
-        "D はカーソル位置から行末までを削除する",
-        "d$ も同じ。$ は行末への移動"
+        "f, でカンマに飛び l で 1 つ右へ。D でそこから行末まで削除する",
+        "D は d$ の短縮形。動きは同じ"
       ]
     },
     "en": {
       "title": "Delete to end of line",
-      "description": "Delete from the cursor to the end of the line, leaving 'Keep this part,'",
-      "hints": ["There is a one-key command to delete from the cursor to the end of the line"],
+      "description": "Delete 'delete the rest' so only 'Keep this part,' remains",
+      "hints": [
+        "Move to where the deletion should start, then use the one-key command that deletes to the end of the line"
+      ],
       "notes": [
-        "D deletes from the cursor to the end of the line",
-        "d$ does the same; $ is the motion to end of line"
+        "f, jumps to the comma, l steps past it, then D deletes to the end of the line",
+        "D is shorthand for d$ — same result"
       ]
     }
   }

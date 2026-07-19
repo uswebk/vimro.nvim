@@ -116,7 +116,7 @@ require("vimro").setup({
 
 Problems live in `problems/<category>/NNN-<slug>.json`, one file per problem:
 
-- Fill the language-independent fields: `id`, `category`, `difficulty`, `start`, `goal`, `cursor` (1-based `[row, col]`), `solutions` (`keys` in Vim notation like `<Esc>`, mark the shortest with `"optimal": true`), `tags`.
+- Fill the language-independent fields: `id`, `category`, `difficulty`, `start`, `goal`, `solutions` (`keys` in Vim notation like `<Esc>`, starting from the first character of the buffer, mark the shortest with `"optimal": true`), `tags`.
 - Fill both `i18n.ja` and `i18n.en` (`title`, `description`, `hints`, `notes`). `notes[i]` describes `solutions[i]`.
 - Verify in Neovim that each `solutions[].keys` really transforms `start` into `goal`.
 - Aim for one target operation per problem, and keep `description` consistent with `goal`.

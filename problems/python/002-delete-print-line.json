@@ -11,10 +11,6 @@
     "def add(a, b):",
     "    return a + b"
   ],
-  "cursor": [
-    1,
-    1
-  ],
   "solutions": [
     {
       "keys": "jdd",

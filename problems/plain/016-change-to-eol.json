@@ -8,17 +8,13 @@
   "goal": [
     "The quick brown cat"
   ],
-  "cursor": [
-    1,
-    17
-  ],
   "solutions": [
     {
-      "keys": "Ccat<Esc>",
+      "keys": "3wCcat<Esc>",
       "optimal": true
     },
     {
-      "keys": "c$cat<Esc>"
+      "keys": "3wc$cat<Esc>"
     }
   ],
   "tags": [
@@ -33,7 +29,7 @@
         "D が行末まで削除なら、行末まで変更するのは C"
       ],
       "notes": [
-        "C でカーソル以降を消してそのまま入力に入る",
+        "3w で fox まで進み C でそこから行末までを書き換える",
         "C は c$ の短縮形。動きは同じ"
       ]
     },
@@ -44,7 +40,7 @@
         "D deletes to the end of the line; C changes to the end of the line"
       ],
       "notes": [
-        "C removes the rest of the line and drops you into insert",
+        "3w moves to 'fox', then C changes from there to the end of the line",
         "C is shorthand for c$ — same result"
       ]
     }

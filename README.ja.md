@@ -116,7 +116,7 @@ require("vimro").setup({
 
 問題は `problems/<category>/NNN-<slug>.json` に 1 問 1 ファイルで置きます:
 
-- 言語非依存フィールドを埋める: `id` / `category` / `difficulty` / `start` / `goal` / `cursor`（1 始まりの `[行, 列]`）/ `solutions`（`keys` は `<Esc>` などの vim 表記。最短解に `"optimal": true`）/ `tags`
+- 言語非依存フィールドを埋める: `id` / `category` / `difficulty` / `start` / `goal` / `solutions`（`keys` は `<Esc>` などの vim 表記で、常に 1 行目 1 文字目から始まる。最短解に `"optimal": true`）/ `tags`
 - `i18n.ja` と `i18n.en` の両方を埋める（`title` / `description` / `hints` / `notes`）。`notes[i]` は `solutions[i]` の説明
 - 各 `solutions[].keys` が本当に `start` を `goal` に変形することを Neovim で確認する
 - 1 問につき狙う操作は 1 つに絞り、`description` と `goal` を必ず一致させる

@@ -39,13 +39,13 @@ Five modules, each with one job. `ui.lua` is the only one that knows about the o
 - **Clear matching is deliberately loose in one axis only**: `engine.normalize` strips trailing whitespace per line and drops trailing blank lines. Line contents and line count are otherwise strict. Problems whose answer depends on trailing whitespace cannot be expressed.
 - **Keymaps in the practice buffer must stay behind `buffer_prefix`.** Binding plain `n` / `r` there would shadow the exact Vim motions being trained. The problem pane is where bare keys are safe.
 - **Categories are hardcoded in `ui.lua`** (`local categories = { "plain" }`) even though `engine.load_problems` accepts any directory name. Adding a new `problems/<category>/` requires editing that list too.
-- **`cursor` only applies to single-line problems.** `ui.load_current` starts every multi-line problem at `[1, 1]` — finding the line to edit is part of the drill — so a multi-line problem's `cursor` field is never used, and its solutions must work from the first character.
+- **Every problem starts at `[1, 1]`.** There is no per-problem start position: getting to the spot you edit is part of the drill, and a mid-line start reads as a leftover cursor from the previous problem. Solutions must therefore include whatever motion they need.
 - **`quit()` has two exit paths**: started from an empty Neovim (`is_fresh_nvim`) it runs `qa` and exits the editor; otherwise it tears down the tab/split and wipes buffers. Both must leave `S` clean, since `M.start()` guards re-entry on `S.active`.
 - Both buffers are `nofile` + `bufhidden=wipe`, and a `BufWipeout` autocmd on the practice buffer ends the session — wiping it from anywhere is a supported way to quit.
 
 ## Problem JSON
 
-One problem per file at `problems/<category>/NNN-<slug>.json`, `id` = `<category>-NNN`. Language-independent fields (`start`, `goal`, `cursor` as 1-based `[row, col]`, `solutions[].keys` in Vim notation, `tags`) plus both `i18n.ja` and `i18n.en`. `notes[i]` describes `solutions[i]` and must match in length; exactly one solution carries `"optimal": true`.
+One problem per file at `problems/<category>/NNN-<slug>.json`, `id` = `<category>-NNN`. Language-independent fields (`start`, `goal`, `solutions[].keys` in Vim notation, `tags`) plus both `i18n.ja` and `i18n.en`. `notes[i]` describes `solutions[i]` and must match in length; exactly one solution carries `"optimal": true`.
 
 `problems/plain/001-delete-word.json` is the reference example. Full authoring workflow, including verification and PR conventions, lives in `.claude/skills/add-problem/SKILL.md` — follow it rather than hand-rolling when adding problems.
 

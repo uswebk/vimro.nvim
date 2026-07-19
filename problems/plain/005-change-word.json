@@ -2,31 +2,47 @@
   "id": "plain-005",
   "category": "plain",
   "difficulty": 2,
-  "start":  ["I like cats"],
-  "goal":   ["I like dogs"],
-  "cursor": [1, 8],
-  "solutions": [
-    { "keys": "cwdogs<Esc>", "optimal": true },
-    { "keys": "ciwdogs<Esc>" }
+  "start": [
+    "I like cats"
   ],
-  "tags": ["cw", "ciw", "change"],
+  "goal": [
+    "I like dogs"
+  ],
+  "solutions": [
+    {
+      "keys": "2wcwdogs<Esc>",
+      "optimal": true
+    },
+    {
+      "keys": "2wciwdogs<Esc>"
+    }
+  ],
+  "tags": [
+    "cw",
+    "ciw",
+    "change"
+  ],
   "i18n": {
     "ja": {
       "title": "単語を変更する",
       "description": "cats を dogs に変更してください",
-      "hints": ["c は変更オペレータ。削除してそのまま挿入モードに入る"],
+      "hints": [
+        "c は変更オペレータ。削除してそのまま挿入モードに入る"
+      ],
       "notes": [
-        "cw で単語を消して挿入モードへ。dogs と打って <Esc>",
-        "ciw は単語の途中からでも単語全体を変更できる"
+        "2w で cats まで進み cw で単語を変更する",
+        "ciw は単語のどこにいても単語全体を変更する"
       ]
     },
     "en": {
       "title": "Change a word",
       "description": "Change 'cats' to 'dogs'",
-      "hints": ["c is the change operator: it deletes and enters insert mode"],
+      "hints": [
+        "c is the change operator: it deletes and enters insert mode"
+      ],
       "notes": [
-        "cw deletes the word and enters insert mode; type dogs then <Esc>",
-        "ciw changes the whole word even from the middle of it"
+        "2w moves to 'cats', then cw changes the word",
+        "ciw changes the whole word from anywhere inside it"
       ]
     }
   }
