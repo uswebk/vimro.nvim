@@ -1,0 +1,55 @@
+{
+  "id": "plain-015",
+  "category": "plain",
+  "difficulty": 1,
+  "start": [
+    "Second",
+    "Third"
+  ],
+  "goal": [
+    "First",
+    "Second",
+    "Third"
+  ],
+  "cursor": [
+    1,
+    1
+  ],
+  "solutions": [
+    {
+      "keys": "OFirst<Esc>",
+      "optimal": true
+    },
+    {
+      "keys": "iFirst<CR><Esc>"
+    }
+  ],
+  "tags": [
+    "O",
+    "insert"
+  ],
+  "i18n": {
+    "ja": {
+      "title": "上に行を開く",
+      "description": "1 行目の上に First を追加してください",
+      "hints": [
+        "o は下に、大文字の O は上に行を開く"
+      ],
+      "notes": [
+        "O で現在行の上に空行を開いて入力する",
+        "行頭で i から入力して <CR> で改行しても同じ形になる"
+      ]
+    },
+    "en": {
+      "title": "Open a line above",
+      "description": "Add a line 'First' above the first line",
+      "hints": [
+        "o opens a line below; capital O opens one above"
+      ],
+      "notes": [
+        "O opens a new line above the current one and starts inserting",
+        "Inserting at the line start and pressing <CR> gets there too"
+      ]
+    }
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "id": "plain-014",
+  "category": "plain",
+  "difficulty": 1,
+  "start": [
+    "quick brown fox"
+  ],
+  "goal": [
+    "The quick brown fox"
+  ],
+  "cursor": [
+    1,
+    7
+  ],
+  "solutions": [
+    {
+      "keys": "IThe <Esc>",
+      "optimal": true
+    },
+    {
+      "keys": "0iThe <Esc>"
+    }
+  ],
+  "tags": [
+    "I",
+    "insert"
+  ],
+  "i18n": {
+    "ja": {
+      "title": "行頭に挿入する",
+      "description": "行頭に The を足して The quick brown fox にしてください",
+      "hints": [
+        "I は行頭に移動してから挿入を始める"
+      ],
+      "notes": [
+        "I なら行のどこにいても 1 打で行頭から入力できる",
+        "0 で行頭に移動してから i で挿入する"
+      ]
+    },
+    "en": {
+      "title": "Insert at the start of the line",
+      "description": "Add 'The ' at the front to get 'The quick brown fox'",
+      "hints": [
+        "I jumps to the start of the line and starts inserting"
+      ],
+      "notes": [
+        "I inserts at the line start from anywhere in the line",
+        "0 moves to the start, then i inserts"
+      ]
+    }
+  }
+}

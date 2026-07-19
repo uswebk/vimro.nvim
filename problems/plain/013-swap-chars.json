@@ -1,0 +1,53 @@
+{
+  "id": "plain-013",
+  "category": "plain",
+  "difficulty": 2,
+  "start": [
+    "teh cat sat"
+  ],
+  "goal": [
+    "the cat sat"
+  ],
+  "cursor": [
+    1,
+    2
+  ],
+  "solutions": [
+    {
+      "keys": "xp",
+      "optimal": true
+    },
+    {
+      "keys": "0cwthe<Esc>"
+    }
+  ],
+  "tags": [
+    "x",
+    "p",
+    "swap"
+  ],
+  "i18n": {
+    "ja": {
+      "title": "隣り合う文字を入れ替える",
+      "description": "teh を the に直してください",
+      "hints": [
+        "x で消した 1 文字もレジスタに入る。p はカーソルの後ろに貼る"
+      ],
+      "notes": [
+        "e の上で xp。打ち間違いを直す定番の 2 打",
+        "行頭に戻って cw で単語ごと打ち直す"
+      ]
+    },
+    "en": {
+      "title": "Swap two characters",
+      "description": "Fix 'teh' to 'the'",
+      "hints": [
+        "x yanks the deleted character too; p puts it after the cursor"
+      ],
+      "notes": [
+        "xp on the 'e' — the classic two-key typo fix",
+        "Go back to the start and retype the word with cw"
+      ]
+    }
+  }
+}
