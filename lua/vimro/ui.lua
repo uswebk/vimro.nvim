@@ -158,8 +158,10 @@ local function load_current()
     local row = math.min(problem.cursor[1], #problem.start)
     local line = problem.start[row] or ""
     local col = math.max(0, math.min(problem.cursor[2] - 1, math.max(0, #line - 1)))
-    vim.api.nvim_win_set_cursor(S.practice_win, { row, col })
+    -- Enter the window first: WinEnter/BufEnter autocmds (cursor-restore plugins
+    -- and the like) would otherwise run after the cursor was placed and move it back
     vim.api.nvim_set_current_win(S.practice_win)
+    vim.api.nvim_win_set_cursor(S.practice_win, { row, col })
   end
 
   render_pane()
