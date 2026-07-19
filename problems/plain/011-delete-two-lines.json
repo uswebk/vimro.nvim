@@ -1,0 +1,55 @@
+{
+  "id": "plain-011",
+  "category": "plain",
+  "difficulty": 2,
+  "start": [
+    "Roses are red",
+    "Violets are blue",
+    "Sugar is sweet"
+  ],
+  "goal": [
+    "Sugar is sweet"
+  ],
+  "cursor": [
+    1,
+    1
+  ],
+  "solutions": [
+    {
+      "keys": "2dd",
+      "optimal": true
+    },
+    {
+      "keys": "dj"
+    }
+  ],
+  "tags": [
+    "dd",
+    "dj",
+    "delete"
+  ],
+  "i18n": {
+    "ja": {
+      "title": "2 行まとめて削除する",
+      "description": "最初の 2 行を削除して Sugar is sweet だけにしてください",
+      "hints": [
+        "dd の前に回数を付けるとその行数だけ削除できる"
+      ],
+      "notes": [
+        "2dd で 2 行削除する",
+        "dj は「下方向へ」の行削除。結果は同じ 2 行"
+      ]
+    },
+    "en": {
+      "title": "Delete two lines",
+      "description": "Delete the first two lines so only 'Sugar is sweet' remains",
+      "hints": [
+        "A count before dd deletes that many lines"
+      ],
+      "notes": [
+        "2dd deletes two lines",
+        "dj deletes linewise downward — the same two lines"
+      ]
+    }
+  }
+}

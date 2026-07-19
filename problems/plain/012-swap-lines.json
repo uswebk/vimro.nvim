@@ -1,0 +1,56 @@
+{
+  "id": "plain-012",
+  "category": "plain",
+  "difficulty": 3,
+  "start": [
+    "Second line",
+    "First line"
+  ],
+  "goal": [
+    "First line",
+    "Second line"
+  ],
+  "cursor": [
+    1,
+    1
+  ],
+  "solutions": [
+    {
+      "keys": "ddp",
+      "optimal": true
+    },
+    {
+      "keys": "jddP"
+    }
+  ],
+  "tags": [
+    "dd",
+    "p",
+    "P",
+    "swap"
+  ],
+  "i18n": {
+    "ja": {
+      "title": "2 行を入れ替える",
+      "description": "行の順番を入れ替えて First line / Second line の順にしてください",
+      "hints": [
+        "削除した行はレジスタに残る。p は現在行の下に貼り付ける"
+      ],
+      "notes": [
+        "dd で 1 行目を切り取り p で下に貼る。行入れ替えの定番",
+        "2 行目を dd してから P で上に貼っても同じ"
+      ]
+    },
+    "en": {
+      "title": "Swap two lines",
+      "description": "Swap the lines so 'First line' comes before 'Second line'",
+      "hints": [
+        "A deleted line goes to a register; p puts it below the current line"
+      ],
+      "notes": [
+        "dd cuts line 1 and p puts it below — the classic line swap",
+        "dd on line 2, then P puts it above"
+      ]
+    }
+  }
+}

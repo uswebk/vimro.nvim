@@ -1,0 +1,52 @@
+{
+  "id": "plain-017",
+  "category": "plain",
+  "difficulty": 2,
+  "start": [
+    "please stop now"
+  ],
+  "goal": [
+    "please STOP now"
+  ],
+  "cursor": [
+    1,
+    8
+  ],
+  "solutions": [
+    {
+      "keys": "gUiw",
+      "optimal": true
+    },
+    {
+      "keys": "gUe"
+    }
+  ],
+  "tags": [
+    "gU",
+    "case"
+  ],
+  "i18n": {
+    "ja": {
+      "title": "単語を大文字にする",
+      "description": "stop を STOP にしてください",
+      "hints": [
+        "gU は大文字化オペレータ。後ろにモーションやテキストオブジェクトを取る"
+      ],
+      "notes": [
+        "gUiw で単語まるごと大文字にする。単語のどこにいても効く",
+        "gUe は単語末尾までを大文字にする"
+      ]
+    },
+    "en": {
+      "title": "Uppercase a word",
+      "description": "Turn 'stop' into 'STOP'",
+      "hints": [
+        "gU is the uppercase operator; it takes a motion or text object"
+      ],
+      "notes": [
+        "gUiw uppercases the whole word from anywhere inside it",
+        "gUe uppercases from the cursor to the end of the word"
+      ]
+    }
+  }
+}

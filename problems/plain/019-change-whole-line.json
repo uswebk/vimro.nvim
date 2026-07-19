@@ -1,0 +1,55 @@
+{
+  "id": "plain-019",
+  "category": "plain",
+  "difficulty": 2,
+  "start": [
+    "This line is wrong",
+    "Keep this one"
+  ],
+  "goal": [
+    "This line is right",
+    "Keep this one"
+  ],
+  "cursor": [
+    1,
+    6
+  ],
+  "solutions": [
+    {
+      "keys": "ccThis line is right<Esc>",
+      "optimal": true
+    },
+    {
+      "keys": "SThis line is right<Esc>"
+    }
+  ],
+  "tags": [
+    "cc",
+    "S",
+    "change"
+  ],
+  "i18n": {
+    "ja": {
+      "title": "行をまるごと書き換える",
+      "description": "1 行目を This line is right に書き換えてください。2 行目はそのまま",
+      "hints": [
+        "cc は行の中身を消して、その行の入力に入る"
+      ],
+      "notes": [
+        "cc で行の内容を入れ替える",
+        "S は cc と同じ働きの 1 打版"
+      ]
+    },
+    "en": {
+      "title": "Change a whole line",
+      "description": "Rewrite the first line as 'This line is right', leaving the second line alone",
+      "hints": [
+        "cc clears the line and drops you into insert on it"
+      ],
+      "notes": [
+        "cc replaces the contents of the line",
+        "S is a one-key synonym for cc"
+      ]
+    }
+  }
+}

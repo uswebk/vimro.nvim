@@ -1,0 +1,53 @@
+{
+  "id": "plain-018",
+  "category": "plain",
+  "difficulty": 3,
+  "start": [
+    "Remember (the old note) today"
+  ],
+  "goal": [
+    "Remember (a new note) today"
+  ],
+  "cursor": [
+    1,
+    11
+  ],
+  "solutions": [
+    {
+      "keys": "ci(a new note<Esc>",
+      "optimal": true
+    },
+    {
+      "keys": "ciba new note<Esc>"
+    }
+  ],
+  "tags": [
+    "ci(",
+    "cib",
+    "change"
+  ],
+  "i18n": {
+    "ja": {
+      "title": "括弧の中身を書き換える",
+      "description": "括弧の中を a new note に変えてください",
+      "hints": [
+        "i( は括弧の内側を指すテキストオブジェクト。括弧自体は残る"
+      ],
+      "notes": [
+        "ci( で括弧の中身だけを変更する",
+        "cib も同じ。b は ( ) のブロックを表す"
+      ]
+    },
+    "en": {
+      "title": "Change inside parentheses",
+      "description": "Change the text inside the parentheses to 'a new note'",
+      "hints": [
+        "i( is the text object for the inside of a pair of parens; the parens stay"
+      ],
+      "notes": [
+        "ci( changes just what is between the parentheses",
+        "cib does the same — b stands for the ( ) block"
+      ]
+    }
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "id": "plain-016",
+  "category": "plain",
+  "difficulty": 2,
+  "start": [
+    "The quick brown fox jumps"
+  ],
+  "goal": [
+    "The quick brown cat"
+  ],
+  "cursor": [
+    1,
+    17
+  ],
+  "solutions": [
+    {
+      "keys": "Ccat<Esc>",
+      "optimal": true
+    },
+    {
+      "keys": "c$cat<Esc>"
+    }
+  ],
+  "tags": [
+    "C",
+    "change"
+  ],
+  "i18n": {
+    "ja": {
+      "title": "行末まで書き換える",
+      "description": "fox jumps を cat に変えて The quick brown cat にしてください",
+      "hints": [
+        "D が行末まで削除なら、行末まで変更するのは C"
+      ],
+      "notes": [
+        "C でカーソル以降を消してそのまま入力に入る",
+        "C は c$ の短縮形。動きは同じ"
+      ]
+    },
+    "en": {
+      "title": "Change to the end of the line",
+      "description": "Replace 'fox jumps' with 'cat' to get 'The quick brown cat'",
+      "hints": [
+        "D deletes to the end of the line; C changes to the end of the line"
+      ],
+      "notes": [
+        "C removes the rest of the line and drops you into insert",
+        "C is shorthand for c$ — same result"
+      ]
+    }
+  }
+}

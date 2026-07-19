@@ -1,0 +1,53 @@
+{
+  "id": "plain-020",
+  "category": "plain",
+  "difficulty": 3,
+  "start": [
+    "one two three four"
+  ],
+  "goal": [
+    "three four"
+  ],
+  "cursor": [
+    1,
+    1
+  ],
+  "solutions": [
+    {
+      "keys": "dw.",
+      "optimal": true
+    },
+    {
+      "keys": "d2w"
+    }
+  ],
+  "tags": [
+    "dw",
+    ".",
+    "repeat"
+  ],
+  "i18n": {
+    "ja": {
+      "title": "直前の操作を繰り返す",
+      "description": "one と two を削除して three four にしてください",
+      "hints": [
+        ". は直前の変更をもう一度実行する"
+      ],
+      "notes": [
+        "dw で 1 単語消し、. で同じ操作を繰り返す",
+        "d2w のように回数を付けて一度に消してもよい"
+      ]
+    },
+    "en": {
+      "title": "Repeat the last change",
+      "description": "Delete 'one' and 'two' to get 'three four'",
+      "hints": [
+        ". repeats the last change"
+      ],
+      "notes": [
+        "dw deletes one word, then . repeats it",
+        "d2w does both at once with a count"
+      ]
+    }
+  }
+}
