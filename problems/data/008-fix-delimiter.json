@@ -1,0 +1,50 @@
+{
+  "id": "data-008",
+  "category": "data",
+  "difficulty": 2,
+  "start": [
+    "1;alice;active"
+  ],
+  "goal": [
+    "1,alice,active"
+  ],
+  "solutions": [
+    {
+      "keys": "f;r,;r,",
+      "optimal": true
+    },
+    {
+      "keys": "f;r,f;r,"
+    }
+  ],
+  "tags": [
+    "r",
+    "f",
+    "replace",
+    "csv"
+  ],
+  "i18n": {
+    "ja": {
+      "title": "区切り文字を直す",
+      "description": "セミコロンをカンマに置き換えて 1,alice,active にしてください",
+      "hints": [
+        "r は1文字だけ置換する。; は直前の f を繰り返す"
+      ],
+      "notes": [
+        "f; で最初のセミコロンへ、r, で置換。; で次のセミコロンへ移動して r, を繰り返す",
+        "f; と r, を2回繰り返しても同じ結果になる"
+      ]
+    },
+    "en": {
+      "title": "Fix the delimiter",
+      "description": "Replace the semicolons with commas to get '1,alice,active'",
+      "hints": [
+        "r replaces a single character; ; repeats the last f search"
+      ],
+      "notes": [
+        "f; jumps to the first semicolon, r, replaces it, then ; repeats the search and r, again",
+        "Repeating f; r, twice gives the same result"
+      ]
+    }
+  }
+}
