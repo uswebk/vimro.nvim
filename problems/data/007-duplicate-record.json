@@ -1,0 +1,51 @@
+{
+  "id": "data-007",
+  "category": "data",
+  "difficulty": 3,
+  "start": [
+    "1,alice,active"
+  ],
+  "goal": [
+    "1,alice,active",
+    "1,alice,active"
+  ],
+  "solutions": [
+    {
+      "keys": "yyp",
+      "optimal": true
+    },
+    {
+      "keys": "yyP"
+    }
+  ],
+  "tags": [
+    "yy",
+    "p",
+    "yank",
+    "csv"
+  ],
+  "i18n": {
+    "ja": {
+      "title": "レコードを複製する",
+      "description": "行を複製して同じ行が2行になるようにしてください",
+      "hints": [
+        "yy でコピーし p で下に貼り付ける"
+      ],
+      "notes": [
+        "yy で行をヤンクし、p で下の行に貼り付ける",
+        "yy の後 P で上に貼り付けても同じ結果になる"
+      ]
+    },
+    "en": {
+      "title": "Duplicate the record",
+      "description": "Duplicate the line so the same row appears twice",
+      "hints": [
+        "yy yanks the line, p pastes it below"
+      ],
+      "notes": [
+        "yy yanks the line and p pastes it on the line below",
+        "yy then P pastes above, giving the same two identical lines"
+      ]
+    }
+  }
+}

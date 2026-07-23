@@ -1,0 +1,49 @@
+{
+  "id": "data-006",
+  "category": "data",
+  "difficulty": 3,
+  "start": [
+    "{ \"status\": \"pending\" }"
+  ],
+  "goal": [
+    "{ \"status\": \"done\" }"
+  ],
+  "solutions": [
+    {
+      "keys": "fpci\"done<Esc>",
+      "optimal": true
+    },
+    {
+      "keys": "$3hci\"done<Esc>"
+    }
+  ],
+  "tags": [
+    "ci\"",
+    "change",
+    "json"
+  ],
+  "i18n": {
+    "ja": {
+      "title": "JSON の値を書き換える",
+      "description": "status の値を done に変更してください",
+      "hints": [
+        "ci\" はカーソル位置以降のダブルクォート内側を変更する"
+      ],
+      "notes": [
+        "fp で pending の上へ進み、ci\" でクォート内側を done に変更する",
+        "$3h で値の内側に入ってから ci\" で変更する"
+      ]
+    },
+    "en": {
+      "title": "Change the JSON value",
+      "description": "Change the value of 'status' to 'done'",
+      "hints": [
+        "ci\" changes the inside of the double quotes at or after the cursor"
+      ],
+      "notes": [
+        "fp moves onto 'pending', then ci\" replaces the quoted value with 'done'",
+        "$3h puts the cursor inside the value, then ci\" changes it"
+      ]
+    }
+  }
+}
