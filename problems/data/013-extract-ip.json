@@ -1,0 +1,50 @@
+{
+  "id": "data-013",
+  "category": "data",
+  "difficulty": 1,
+  "start": [
+    "10.0.0.5 - - [18/Jul/2026:10:22:31] \"GET /index.html\" 200"
+  ],
+  "goal": [
+    "10.0.0.5"
+  ],
+  "solutions": [
+    {
+      "keys": "WD",
+      "optimal": true
+    },
+    {
+      "keys": "f-d$"
+    }
+  ],
+  "tags": [
+    "W",
+    "D",
+    "delete",
+    "log"
+  ],
+  "i18n": {
+    "ja": {
+      "title": "アクセスログから IP だけ残す",
+      "description": "先頭の IP アドレスだけを残して 10.0.0.5 にしてください",
+      "hints": [
+        "D はカーソル位置から行末までを削除する。行末の空白は判定で無視される"
+      ],
+      "notes": [
+        "W で 2 つ目の WORD の先頭へ進み、D で行末まで削除する",
+        "f- で最初の - へ飛んでから d$ で行末まで削除する"
+      ]
+    },
+    "en": {
+      "title": "Keep only the IP from an access log",
+      "description": "Delete everything after the leading IP address to get '10.0.0.5'",
+      "hints": [
+        "D deletes from the cursor to the end of the line; trailing whitespace is ignored when checking"
+      ],
+      "notes": [
+        "W moves to the start of the second WORD, then D deletes to the end of the line",
+        "f- jumps to the first '-', then d$ deletes to the end of the line"
+      ]
+    }
+  }
+}
