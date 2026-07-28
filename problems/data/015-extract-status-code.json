@@ -1,0 +1,53 @@
+{
+  "id": "data-015",
+  "category": "data",
+  "difficulty": 3,
+  "start": [
+    "10:22:31 GET /api/users status=200",
+    "10:22:35 POST /api/login status=401",
+    "10:22:40 GET /api/items status=500"
+  ],
+  "goal": [
+    "200",
+    "401",
+    "500"
+  ],
+  "solutions": [
+    {
+      "keys": ":%s/.*status=//<CR>",
+      "optimal": true
+    },
+    {
+      "keys": ":%normal! $F=d0x<CR>"
+    }
+  ],
+  "tags": [
+    ":s",
+    "substitute",
+    "log"
+  ],
+  "i18n": {
+    "ja": {
+      "title": "ステータスコードだけ取り出す",
+      "description": "各行から status= までを削除してコードの数字だけにしてください",
+      "hints": [
+        ".* は最長一致なので、行頭から status= までをまとめて飲み込める"
+      ],
+      "notes": [
+        ":%s/.*status=// は各行の先頭から status= までを削除する",
+        ":%normal! $F=d0x は各行で = まで戻り、d0 で手前を削除、x で = 自体を消す"
+      ]
+    },
+    "en": {
+      "title": "Pull out just the status code",
+      "description": "Delete everything up to and including 'status=' on each line, leaving only the code",
+      "hints": [
+        ".* is greedy, so it swallows the whole line up to 'status='"
+      ],
+      "notes": [
+        ":%s/.*status=// removes the start of each line through 'status='",
+        ":%normal! $F=d0x goes back to the '=' on each line, d0 removes what precedes it, and x deletes the '=' itself"
+      ]
+    }
+  }
+}

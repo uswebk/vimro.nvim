@@ -1,0 +1,54 @@
+{
+  "id": "data-016",
+  "category": "data",
+  "difficulty": 3,
+  "start": [
+    "10.0.0.5 GET /index.html 200",
+    "10.0.0.7 GET /assets/app.js 404",
+    "10.0.0.9 POST /api/login 500"
+  ],
+  "goal": [
+    "10.0.0.5",
+    "10.0.0.7",
+    "10.0.0.9"
+  ],
+  "solutions": [
+    {
+      "keys": ":%s/ .*//<CR>",
+      "optimal": true
+    },
+    {
+      "keys": ":%normal! WD<CR>"
+    }
+  ],
+  "tags": [
+    ":s",
+    ":normal",
+    "substitute",
+    "log"
+  ],
+  "i18n": {
+    "ja": {
+      "title": "全行から IP 列だけ残す",
+      "description": "各行の最初の空白以降を削除して IP アドレスだけにしてください",
+      "hints": [
+        "最初の空白から行末までを 1 回の置換で消せる"
+      ],
+      "notes": [
+        ":%s/ .*// は各行の最初の空白から行末までを削除する。置換は各行 1 回目の一致だけなので g は不要",
+        ":%normal! WD は各行で 2 つ目の WORD へ移動して行末まで削除する"
+      ]
+    },
+    "en": {
+      "title": "Keep only the IP column",
+      "description": "Delete everything from the first space onward on each line, leaving just the IP addresses",
+      "hints": [
+        "One substitution can wipe from the first space to the end of the line"
+      ],
+      "notes": [
+        ":%s/ .*// deletes from the first space to the end of each line; no g flag is needed since only the first match matters",
+        ":%normal! WD moves to the second WORD on each line and deletes to the end"
+      ]
+    }
+  }
+}

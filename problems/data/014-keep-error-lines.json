@@ -1,0 +1,55 @@
+{
+  "id": "data-014",
+  "category": "data",
+  "difficulty": 3,
+  "start": [
+    "INFO  server started",
+    "ERROR failed to connect",
+    "DEBUG cache warm up",
+    "ERROR timeout on /api/users",
+    "INFO  request handled"
+  ],
+  "goal": [
+    "ERROR failed to connect",
+    "ERROR timeout on /api/users"
+  ],
+  "solutions": [
+    {
+      "keys": ":v/ERROR/d<CR>",
+      "optimal": true
+    },
+    {
+      "keys": ":g!/ERROR/d<CR>"
+    }
+  ],
+  "tags": [
+    ":v",
+    ":g",
+    "global",
+    "log"
+  ],
+  "i18n": {
+    "ja": {
+      "title": "ERROR 行だけ抜き出す",
+      "description": "ERROR を含まない行をすべて削除して ERROR の 2 行だけ残してください",
+      "hints": [
+        ":g はパターンに一致した行、:v は一致しなかった行に対してコマンドを実行する"
+      ],
+      "notes": [
+        ":v/ERROR/d は ERROR を含まない行をすべて削除する",
+        ":g!/ERROR/d は :v とまったく同じ意味。g に ! を付けると一致しない行が対象になる"
+      ]
+    },
+    "en": {
+      "title": "Extract only the ERROR lines",
+      "description": "Delete every line that does not contain ERROR, leaving the two ERROR lines",
+      "hints": [
+        ":g runs a command on matching lines, :v on the lines that do not match"
+      ],
+      "notes": [
+        ":v/ERROR/d deletes every line without ERROR",
+        ":g!/ERROR/d means exactly the same thing: the ! inverts the match"
+      ]
+    }
+  }
+}
