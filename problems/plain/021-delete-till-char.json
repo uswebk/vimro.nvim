@@ -1,0 +1,49 @@
+{
+  "id": "plain-021",
+  "category": "plain",
+  "difficulty": 2,
+  "start": [
+    "Hello there, world"
+  ],
+  "goal": [
+    ", world"
+  ],
+  "solutions": [
+    {
+      "keys": "dt,",
+      "optimal": true
+    },
+    {
+      "keys": "vt,d"
+    }
+  ],
+  "tags": [
+    "dt",
+    "t",
+    "delete"
+  ],
+  "i18n": {
+    "ja": {
+      "title": "指定した文字の手前まで削除する",
+      "description": "カンマの手前までを削除して , world にしてください",
+      "hints": [
+        "t は「その文字の手前まで」移動する。オペレータと組み合わせられる"
+      ],
+      "notes": [
+        "dt, で行頭からカンマの手前までを削除する。カンマ自体は残る",
+        "vt, でカンマの手前まで選択してから d。同じ範囲をビジュアルモードで消す"
+      ]
+    },
+    "en": {
+      "title": "Delete up to a character",
+      "description": "Delete everything before the comma to get ', world'",
+      "hints": [
+        "t moves to just before a character, and it works as a motion for operators"
+      ],
+      "notes": [
+        "dt, deletes from the cursor up to (but not including) the comma",
+        "vt, selects up to just before the comma, then d deletes the selection"
+      ]
+    }
+  }
+}

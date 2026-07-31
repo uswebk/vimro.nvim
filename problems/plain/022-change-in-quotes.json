@@ -1,0 +1,49 @@
+{
+  "id": "plain-022",
+  "category": "plain",
+  "difficulty": 3,
+  "start": [
+    "She said \"hello\" quietly"
+  ],
+  "goal": [
+    "She said \"goodbye\" quietly"
+  ],
+  "solutions": [
+    {
+      "keys": "ci\"goodbye<Esc>",
+      "optimal": true
+    },
+    {
+      "keys": "f\"lct\"goodbye<Esc>"
+    }
+  ],
+  "tags": [
+    "ci\"",
+    "text-object",
+    "change"
+  ],
+  "i18n": {
+    "ja": {
+      "title": "引用符の中身を変更する",
+      "description": "hello を goodbye に変えて She said \"goodbye\" quietly にしてください",
+      "hints": [
+        "i\" は「引用符の内側」のテキストオブジェクト。行内なら引用符まで移動しなくても効く"
+      ],
+      "notes": [
+        "ci\" は引用符の内側だけを変更する。カーソルが引用符より手前にあっても行内なら対象を見つけてくれる",
+        "f\" で開き引用符へ、l で中へ入り、ct\" で閉じ引用符の手前まで変更する"
+      ]
+    },
+    "en": {
+      "title": "Change text inside quotes",
+      "description": "Change 'hello' to 'goodbye' to get She said \"goodbye\" quietly",
+      "hints": [
+        "i\" is the 'inside quotes' text object; it finds the quoted text on the line for you"
+      ],
+      "notes": [
+        "ci\" changes just the text inside the quotes, even from earlier on the line",
+        "f\" jumps to the opening quote, l steps inside, and ct\" changes up to the closing quote"
+      ]
+    }
+  }
+}
