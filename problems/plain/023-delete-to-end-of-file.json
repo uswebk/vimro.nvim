@@ -1,0 +1,52 @@
+{
+  "id": "plain-023",
+  "category": "plain",
+  "difficulty": 2,
+  "start": [
+    "keep this line",
+    "drop this line",
+    "drop this too",
+    "and drop this"
+  ],
+  "goal": [
+    "keep this line"
+  ],
+  "solutions": [
+    {
+      "keys": "jdG",
+      "optimal": true
+    },
+    {
+      "keys": "j3dd"
+    }
+  ],
+  "tags": [
+    "dG",
+    "G",
+    "delete"
+  ],
+  "i18n": {
+    "ja": {
+      "title": "ファイル末尾まで削除する",
+      "description": "2 行目以降を削除して keep this line だけにしてください",
+      "hints": [
+        "G はファイル末尾へ移動する。オペレータと組み合わせると末尾までまとめて消せる"
+      ],
+      "notes": [
+        "j で 2 行目へ移動し dG。カーソル行から最終行までを行単位で削除する",
+        "j で 2 行目へ移動し 3dd。消す行数を数えて指定するやり方"
+      ]
+    },
+    "en": {
+      "title": "Delete to the end of the file",
+      "description": "Delete everything from line 2 down so only 'keep this line' remains",
+      "hints": [
+        "G moves to the last line; combined with an operator it reaches the end of the file"
+      ],
+      "notes": [
+        "j moves to line 2, then dG deletes linewise from there to the last line",
+        "j moves to line 2, then 3dd deletes the three lines by count"
+      ]
+    }
+  }
+}

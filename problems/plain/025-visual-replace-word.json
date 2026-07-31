@@ -1,0 +1,53 @@
+{
+  "id": "plain-025",
+  "category": "plain",
+  "difficulty": 3,
+  "start": [
+    "apple banana",
+    "cherry banana"
+  ],
+  "goal": [
+    "apple banana",
+    "cherry apple"
+  ],
+  "solutions": [
+    {
+      "keys": "yiwjwviwp",
+      "optimal": true
+    },
+    {
+      "keys": "yiwjwcw<C-r>0<Esc>"
+    }
+  ],
+  "tags": [
+    "yiw",
+    "viwp",
+    "visual",
+    "yank",
+    "put"
+  ],
+  "i18n": {
+    "ja": {
+      "title": "ヤンクした単語で別の単語を置き換える",
+      "description": "2 行目の banana を apple に変えて cherry apple にしてください",
+      "hints": [
+        "ビジュアル選択中に p を押すと、選択範囲がレジスタの中身で置き換わる"
+      ],
+      "notes": [
+        "yiw で apple をヤンクし、jw で 2 行目の banana へ。viw で選択して p で置き換える",
+        "yiw でヤンクし、cw の挿入中に <C-r>0 でヤンクレジスタを貼り付ける"
+      ]
+    },
+    "en": {
+      "title": "Replace a word with a yanked word",
+      "description": "Change 'banana' on line 2 to 'apple' to get 'cherry apple'",
+      "hints": [
+        "Pressing p over a visual selection replaces the selection with the register"
+      ],
+      "notes": [
+        "yiw yanks 'apple', jw moves to 'banana' on line 2, viw selects it and p replaces it",
+        "yiw yanks the word, then cw with <C-r>0 inserts the yank register instead of typing"
+      ]
+    }
+  }
+}

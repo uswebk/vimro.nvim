@@ -1,0 +1,54 @@
+{
+  "id": "plain-024",
+  "category": "plain",
+  "difficulty": 2,
+  "start": [
+    "one two three",
+    "four five six",
+    "seven target nine"
+  ],
+  "goal": [
+    "one two three",
+    "four five six",
+    "seven found nine"
+  ],
+  "solutions": [
+    {
+      "keys": "/target<CR>cwfound<Esc>",
+      "optimal": true
+    },
+    {
+      "keys": "2jwcwfound<Esc>"
+    }
+  ],
+  "tags": [
+    "search",
+    "/",
+    "cw",
+    "change"
+  ],
+  "i18n": {
+    "ja": {
+      "title": "検索して移動してから書き換える",
+      "description": "target を found に変えて seven found nine にしてください",
+      "hints": [
+        "/ で検索するとカーソルがヒット位置へ飛ぶ。移動手段として使える"
+      ],
+      "notes": [
+        "/target<CR> で単語の先頭へ飛び、cw で書き換える。行数を数えなくてよい",
+        "2j で 3 行目へ、w で target の先頭へ移動してから cw。検索を使わないやり方"
+      ]
+    },
+    "en": {
+      "title": "Search, then change",
+      "description": "Change 'target' to 'found' to get 'seven found nine'",
+      "hints": [
+        "/ searches and moves the cursor to the match, so it doubles as a motion"
+      ],
+      "notes": [
+        "/target<CR> jumps straight to the word, then cw changes it — no line counting",
+        "2j goes to line 3 and w moves onto 'target', then cw changes it"
+      ]
+    }
+  }
+}
